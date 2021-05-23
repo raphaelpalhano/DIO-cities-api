@@ -37,10 +37,10 @@ public class DistanceService {
                 cities.get(1).getGeolocation()).replace("(", "").replace(")", "");
 
 
-        return String.format("origin: "+ origen + "\n" + "destiny: " + destiny + "\n"+ "Hours traveled: %.1f" +
-                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin-location: %s"+ "\n" + "URL-destiny-location: %s", hours, kmTravel, localizator0, localizator1);
-    }
+        return String.format("1) origin: "+ origen + ";  "+ "\n" + "2) destiny: " + destiny +";  "+ "\n"+ "3) Hours traveled: %.1f" + ";  "  +
+                "\n" + "4) kilometers traveled: %.1f" +";  " + "\n"+ "5) URL-origin-location: %s"+ ";  " + "\n" + "6) URL-destiny-location: %s.", hours, kmTravel, localizator0, localizator1);
 
+    }
 
 
     public String distanceByMinutes(final Long city1, final Long city2, Double kmh) {
@@ -60,8 +60,8 @@ public class DistanceService {
                 cities.get(1).getGeolocation()).replace("(", "").replace(")", "");
 
 
-        return String.format("origin: "+ origen + "\n" + "destiny: " + destiny + "\n"+ "Minutes traveled: %.1f" +
-                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin-location: %s"+ "\n" + "URL-destiny-location: %s", minutes, kmTravel, localizator0, localizator1);
+        return String.format("1) origin: "+ origen + ";  "+ "\n" + "2) destiny: " + destiny +";  "+ "\n"+ "3) Minutes traveled: %.1f" + ";  "  +
+                "\n" + "4) kilometers traveled: %.1f" +";  " + "\n"+ "5) URL-origin-location: %s"+ ";  " + "\n" + "6) URL-destiny-location: %s.",minutes, kmTravel, localizator0, localizator1);
 
     }
 
@@ -80,8 +80,8 @@ public class DistanceService {
                 cities.get(1).getGeolocation()).replace("(", "").replace(")", "");
 
 
-        return String.format("origin: "+ origen + "\n" + "destiny: " + destiny + "\n"+ "Seconds traveled: %.1f" +
-                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin-location: %s"+ "\n" + "URL-destiny-location: %s", seconds, kmTravel, localizator0, localizator1);
+        return String.format("1) origin: "+ origen + ";  "+ "\n" + "2) destiny: " + destiny +";  "+ "\n"+ "3) Seconds traveled: %.1f" + ";  "  +
+                "\n" + "4) kilometers traveled: %.1f" +";  " + "\n"+ "5) URL-origin-location: %s"+ ";  " + "\n" + "6) URL-destiny-location: %s.", seconds, kmTravel, localizator0, localizator1);
 
     }
 
