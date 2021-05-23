@@ -1,0 +1,1 @@
+web: java -jar -Dspring.profiles.active=heroku build/libs/DIO.CitiesDistance-0.0.1-SNAPSHOT.jar
