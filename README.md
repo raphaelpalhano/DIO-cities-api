@@ -1,6 +1,6 @@
 # DIO-cities-api
 ## Proposito<br>
-#### Projeto feito no Digital Innovation One, construção de um crud, usando Docker para gerar um container do Postgresql, Hibernate, Spring boot
+#### Projeto feito no Digital Innovation One, construção de um crud, usando Docker para gerar um container do Postgresql, e desenvolver uma aplicação de geolocalização que possui uma tabela com a descrição de principais países, cidades do brasil e estados.
 
 ## Descrição <br>
 #### Como o título já demonstra, o meu projeto irá gerar a distância em km das cidades e também mostrará quantas horas irá levar para chegar na cidade percorrendo aqueles km.
