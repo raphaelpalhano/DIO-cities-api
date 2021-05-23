@@ -29,16 +29,16 @@ public class DistanceService {
         Double hours = cityRepository.distanceByPoints(city1, city2) * 1.609344/ kmh;
         Double kmTravel = cityRepository.distanceByPoints(city1, city2) * 1.609344;
         //geolocalizacao para a origem:
-        String localizator0 = formatStringfull( String.format("https://www.google.com/maps/@%s,15z",
-                cities.get(0).getGeolocation()));
+        String localizator0 =  String.format("https://www.google.com/maps/@%s,15z",
+                cities.get(0).getGeolocation()).replace("(", "").replace(")", "");;
 
         //formtando a geolocalizacao para o google maps do destino:
-        String localizator1 = formatStringfull( String.format("https://www.google.com/maps/@%s,15z",
-                cities.get(1).getGeolocation()));
+        String localizator1 =  String.format("https://www.google.com/maps/@%s,15z",
+                cities.get(1).getGeolocation()).replace("(", "").replace(")", "");
 
 
         return String.format("origin: "+ origen + "\n" + "destiny: " + destiny + "\n"+ "Hours traveled: %.1f" +
-                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin: %s"+ "\n" + "URL-destiny: %s", hours, kmTravel, localizator0, localizator1);
+                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin-location: %s"+ "\n" + "URL-destiny-location: %s", hours, kmTravel, localizator0, localizator1);
     }
 
 
@@ -53,15 +53,15 @@ public class DistanceService {
         Double minutes = cityRepository.distanceByPoints(city1, city2) * 1.609344/ kmh*60;
         Double kmTravel = cityRepository.distanceByPoints(city1, city2) * 1.609344;
 
-        String localizator0 = formatStringfull( String.format("https://www.google.com/maps/@%s,15z",
-                cities.get(0).getGeolocation()));
+        String localizator0 =  String.format("https://www.google.com/maps/@%s,15z",
+                cities.get(0).getGeolocation()).replace("(", "").replace(")", "");
 
-        String localizator1 = formatStringfull( String.format("https://www.google.com/maps/@%s,15z",
-                cities.get(1).getGeolocation()));
+        String localizator1 = String.format("https://www.google.com/maps/@%s,15z",
+                cities.get(1).getGeolocation()).replace("(", "").replace(")", "");
 
 
         return String.format("origin: "+ origen + "\n" + "destiny: " + destiny + "\n"+ "Minutes traveled: %.1f" +
-                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin: %s"+ "\n" + "URL-destiny: %s", minutes, kmTravel, localizator0, localizator1);
+                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin-location: %s"+ "\n" + "URL-destiny-location: %s", minutes, kmTravel, localizator0, localizator1);
 
     }
 
@@ -73,15 +73,15 @@ public class DistanceService {
         String destiny = cities.get(1).getName();
         Double seconds = (cityRepository.distanceByPoints(city1, city2) * 1.609344/ kmh*60)*60;
         Double kmTravel = cityRepository.distanceByPoints(city1, city2) * 1.609344;
-        String localizator0 = formatStringfull( String.format("https://www.google.com/maps/@%s,15z",
-                cities.get(0).getGeolocation()));
+        String localizator0 =  String.format("https://www.google.com/maps/@%s,15z",
+                cities.get(0).getGeolocation()).replace("(", "").replace(")", "");
 
-        String localizator1 = formatStringfull( String.format("https://www.google.com/maps/@%s,15z",
-                cities.get(1).getGeolocation()));
+        String localizator1 = String.format("https://www.google.com/maps/@%s,15z",
+                cities.get(1).getGeolocation()).replace("(", "").replace(")", "");
 
 
         return String.format("origin: "+ origen + "\n" + "destiny: " + destiny + "\n"+ "Seconds traveled: %.1f" +
-                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin: %s"+ "\n" + "URL-destiny: %s", seconds, kmTravel, localizator0, localizator1);
+                "\n" + "kilometers traveled: %.1f" + "\n"+ "URL-origin-location: %s"+ "\n" + "URL-destiny-location: %s", seconds, kmTravel, localizator0, localizator1);
 
     }
 
@@ -97,13 +97,6 @@ public class DistanceService {
 
     }*/
 
-    public static String formatStringfull(String texts){
-     String valor =  texts.lines()
-                .filter(text -> text.contains("("))
-                .map(text -> text.replace("(", ""))
-                .filter(text -> text.contains(")"))
-                .map(text -> text.replace(")", "")).iterator().next().toString();
-        return valor;
-    }
+
 
 }
